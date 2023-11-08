@@ -1,4 +1,4 @@
-# puck
+# Puck
 
 The self-hosted, drag and drop editor for React.
 
@@ -21,7 +21,7 @@ The self-hosted, drag and drop editor for React.
 
 - 🖱️ **Drag and drop**: Visual editing for your existing React component library
 - 🌐 **Integrations**: Load your content from a 3rd party headless CMS
-- ✍️ **Inline editing**: Author content directly via puck for convenience
+- ✍️ **Inline editing**: Author content directly via Puck for convenience
 - ⭐️ **No vendor lock-in**: Self-host or integrate with your existing application
 
 [See demo](https://puck-editor-demo.vercel.app/edit)
@@ -35,7 +35,7 @@ Render the editor:
 import { Puck } from "@measured/puck";
 import "@measured/puck/dist/index.css";
 
-// Create puck component config
+// Create Puck component config
 const config = {
   components: {
     HeadingBlock: {
@@ -86,7 +86,7 @@ Install the package
 npm i @measured/puck --save
 ```
 
-Or generate a puck application using a recipe
+Or generate a Puck application using a recipe
 
 ```sh
 npx create-puck-app my-app
@@ -491,7 +491,7 @@ External fields can be used to load content from an external content repository,
 
 ### `AppState`
 
-The `AppState` object stores the puck application state.
+The `AppState` object stores the Puck application state.
 
 - **data** (`Data`): The page data currently being rendered
 - **ui** (`object`):
@@ -506,7 +506,7 @@ The `AppState` object stores the puck application state.
 
 ### `Data`
 
-The `Data` object stores the puck page data.
+The `Data` object stores the Puck page data.
 
 - **root** (`ComponentData`): The component data for the root of your configuration.
   - **props** (object): Extends `ComponentData.props`, with some additional props

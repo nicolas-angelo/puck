@@ -1,6 +1,38 @@
+import {
+  ConfigPreview,
+  Preview,
+  InputOrGroup,
+} from "../../../../components/Preview";
+
 # Array
 
 Array fields are used to render a list of items with a subset of fields. Extends [Base](base).
+
+{/* TODO dnd is broken when providing a value on initial render */}
+
+<ConfigPreview
+  label="Example"
+  componentConfig={{
+    fields: {
+      items: {
+        type: "array",
+        arrayFields: {
+          title: { type: "text" },
+        },
+      },
+    },
+    defaultProps: { items: [{ title: "Apple" }, { title: "Banana" }] },
+    render: ({ items }) => {
+      return (
+        <ul>
+          {items.map((item, i) => (
+            <li key={i}>{item.title}</li>
+          ))}
+        </ul>
+      );
+    },
+  }}
+/>
 
 ```tsx {5-10} copy
 const config = {
@@ -41,7 +73,7 @@ const config = {
 
 ### `type`
 
-The type of the field. Must be `"array"` for array fields.
+The type of the field. Must be `"array"` for Array fields.
 
 ```tsx {6} copy
 const config = {
@@ -112,6 +144,33 @@ const config = {
 };
 ```
 
+<ConfigPreview
+  label="Example"
+  componentConfig={{
+    fields: {
+      items: {
+        type: "array",
+        arrayFields: {
+          title: { type: "text" },
+        },
+        defaultItemProps: {
+          title: "Hello, world",
+        },
+      },
+    },
+    defaultProps: { items: [{ title: "Apple" }, { title: "Banana" }] },
+    render: ({ items }) => {
+      return (
+        <ul>
+          {items.map((item, i) => (
+            <li key={i}>{item.title}</li>
+          ))}
+        </ul>
+      );
+    },
+  }}
+/>
+
 ### `getItemSummary(item, index)`
 
 A function to get the label of each item.
@@ -126,7 +185,7 @@ const config = {
           arrayFields: {
             title: { type: "text" },
           },
-          getItemSummary: (item) => item.title,
+          getItemSummary: (item) => item.title || "Item",
         },
       },
       // ...
@@ -134,3 +193,28 @@ const config = {
   },
 };
 ```
+
+<ConfigPreview
+  label="Example"
+  componentConfig={{
+    fields: {
+      items: {
+        type: "array",
+        arrayFields: {
+          title: { type: "text" },
+        },
+        getItemSummary: (item) => item.title || "Item",
+      },
+    },
+    defaultProps: { items: [{ title: "Apple" }, { title: "Banana" }] },
+    render: ({ items }) => {
+      return (
+        <ul>
+          {items.map((item, i) => (
+            <li key={i}>{item.title}</li>
+          ))}
+        </ul>
+      );
+    },
+  }}
+/>

@@ -4,5 +4,14 @@
   },
   "array": {
     "title": "Array"
+  },
+  "number": {
+    "title": "Number"
+  },
+  "text": {
+    "title": "Text"
+  },
+  "textarea": {
+    "title": "Textarea"
   }
 }

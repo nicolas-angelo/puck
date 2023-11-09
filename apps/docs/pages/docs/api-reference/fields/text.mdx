@@ -1,0 +1,64 @@
+import { ConfigPreview } from "../../../../components/Preview";
+
+# Text
+
+Text fields are used to render a `text` input. Extends [Base](base).
+
+<ConfigPreview
+  label="Example"
+  componentConfig={{
+    fields: {
+      title: {
+        type: "text",
+      },
+    },
+    defaultProps: { title: "Hello, world" },
+    render: ({ title }) => {
+      return <h1 style={{ margin: 0 }}>{title}</h1>;
+    },
+  }}
+/>
+
+```tsx {5-7} copy
+const config = {
+  components: {
+    Example: {
+      fields: {
+        title: {
+          type: "text",
+        },
+      },
+      render: ({ title }) => {
+        return <h1>{title}</h1>;
+      },
+    },
+  },
+};
+```
+
+## Params
+
+| Prop            | Example        | Type   | Status   |
+| --------------- | -------------- | ------ | -------- |
+| [`type`](#type) | `type: "text"` | "text" | Required |
+
+## Required params
+
+### `type`
+
+The type of the field. Must be `"text"` for Text fields.
+
+```tsx {6} copy
+const config = {
+  components: {
+    Example: {
+      fields: {
+        items: {
+          type: "text",
+        },
+      },
+      // ...
+    },
+  },
+};
+```
